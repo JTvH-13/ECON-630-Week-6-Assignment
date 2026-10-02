@@ -1,0 +1,11 @@
+### these are the files and directories that should be ignored by Git
+# environment variables (i.e. API keys, passwords or database credentials; each person keeps their own local .env)
+.env
+# local Python environment (.venv = full copy of Python interpreter plus every installed package) 
+.venv/
+# caches (compiled bytecode; not needed in repo)
+__pycache__/
+# Jupyter Notebook checkpoints/backup copies – don't want to commit these to avoid adding clutter
+.ipynb_checkpoints/
+# macOS specific files (macOS creates this file in every folder opened in Finder; not relevant to project)
+.DS_Store
