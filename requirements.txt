@@ -1,0 +1,10 @@
+pandas
+requests
+python-dotenv
+matplotlib
+statsmodels
+scipy
+jupyter
+ipykernel
+nbconvert
+markdown
