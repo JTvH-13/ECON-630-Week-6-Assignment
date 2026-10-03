@@ -4,8 +4,8 @@
 
 Read this section first. The rest of the plan is the spec; this section says how to carry it out.
 
-- **Deliverable:** `week-6-assignment.ipynb`, built following the outline in §6. It must run top to bottom from a fresh kernel with no errors:
-  `jupyter nbconvert --to notebook --execute --inplace week-6-assignment.ipynb`
+- **Deliverable:** `analysis.ipynb`, built following the outline in §6. It must run top to bottom from a fresh kernel with no errors:
+  `jupyter nbconvert --to notebook --execute --inplace analysis.ipynb`
 - **Environment / kernel:** use the **`base` / Python 3.14** kernel (anaconda, `/opt/anaconda3/bin/python`). This matches the kernelspec already in `week-6-assignment.ipynb` and `policy-dates.ipynb`, and the interpreter in `.vscode/settings.json`. Install dependencies into that environment with `/opt/anaconda3/bin/python -m pip install -r requirements.txt`. If the `base` kernel is not registered, register it with `/opt/anaconda3/bin/python -m ipykernel install --user --name python3 --display-name "base"`. Do not switch the notebook to the `.venv` (Python 3.9) interpreter.
 - **Policy dates:** the single source of truth is the `EXPANSION_YEAR` dictionary in `policy-dates.ipynb`. Load it into the main notebook with `%run policy-dates.ipynb`. Do not retype it, change it, or fill in dates from memory.
 - **Rules:**
@@ -102,7 +102,7 @@ Collect the results of tests 1–4 into one summary table with columns: test, co
 - **Supports:** the `treated_post` coefficient is negative and significant (p < 0.05); pre-2014 trends in chart 1 look parallel; the slope on `baseline_rate_2013` is more negative for treated states (a negative interaction); and dispersion in chart 2 falls faster for the treated group.
 - **Contradicts:** `treated_post` is zero or positive; or the groups were already diverging before 2014, which would undermine the DiD design; or there is no difference in catch-up between the groups.
 
-## 6. Notebook Outline (`week-6-assignment.ipynb`)
+## 6. Notebook Outline (`analysis.ipynb`)
 
 Build the cells in this order, with a short markdown header before each section:
 
