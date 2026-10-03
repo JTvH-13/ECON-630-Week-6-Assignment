@@ -1,0 +1,18 @@
+Section 5 - INTERPRETATION
+
+Added the interpretation as Markdown cells at the end of analysis.ipynb. SAHIE 2020 is still left out, and the robustness section says so.
+
+What the interpretation says:
+- Supporting criteria:
+  - DiD: not met. The estimate is −1.28 pp but p = 0.084, so it misses the 5% bar the plan set.
+  - Parallel pre-trends: met. From 2010 to 2013, treated states fell 0.84 pp and control states 1.10 pp. Control falling slightly faster, if anything, makes the DiD estimate smaller than the true effect, not larger.
+  - Steeper catch-up for treated states: partly met. The slope is −0.51 vs −0.29, but the interaction has p = 0.113.
+  - Dispersion falls faster for treated states: met. The standard deviation fell 45% for treated vs 20% for control from 2013 to 2019.
+- Contradicting criteria: every DiD estimate is negative, and the groups weren't diverging before 2014. The only one not ruled out is "no difference in catch-up," because the steeper slope isn't significant.
+- Robustness: the SAHIE estimate for low-income adults (−4.81, p < 0.001) is almost four times the main estimate, as you'd expect if the policy drives the result. The all-51-states check (−1.55, p < 0.001) agrees, with the note that two-way fixed effects can be biased when expansion timing is staggered.
+- Caveats (§2c):
+  - Wisconsin and the five states with broad coverage before 2014 (DE, DC, MA, NY, VT) push the estimates toward zero.
+  - Those five also have some of the lowest 2013 rates, which may make the treated catch-up slope look steeper for reasons other than the 2014 expansion.
+  - MI and NH expanded partway through 2014 but are counted as treated for all of 2014.
+  - With only 39 states, the tests have limited power.
+- Bottom line: the evidence mostly supports the expectation, but not strongly. The main estimates fall short of p < 0.05 and probably understate the effect.

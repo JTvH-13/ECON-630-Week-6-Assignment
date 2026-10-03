@@ -1,4 +1,4 @@
-Section 4 -
+Section 4 - CHARTS AND TESTS
 
 Added the three charts and four tests from §4 to analysis.ipynb. It runs from top to bottom with no errors, and every assert passes, including new row-count checks on the robustness samples (468 rows for 4a, 612 for 4b). Each chart and test has a Markdown cell before it explaining the step.
 
