@@ -9,3 +9,5 @@ __pycache__/
 .ipynb_checkpoints/
 # macOS specific files (macOS creates this file in every folder opened in Finder; not relevant to project)
 .DS_Store
+# raw Census API responses (cached by the notebook; re-created on run)
+data/raw/
