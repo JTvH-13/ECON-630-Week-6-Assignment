@@ -1,0 +1,32 @@
+Section 4 -
+
+Added the three charts and four tests from §4 to analysis.ipynb. It runs from top to bottom with no errors, and every assert passes, including new row-count checks on the robustness samples (468 rows for 4a, 612 for 4b). Each chart and test has a Markdown cell before it explaining the step.
+
+Summary table (in the last cell):
+
+┌────────────────────────────────────────┬────────────────────────────┬────────┬───────┬────────┬─────┐
+│                  Test                  │  Coefficient of interest   │  Coef  │  SE   │   p    │  N  │
+├────────────────────────────────────────┼────────────────────────────┼────────┼───────┼────────┼─────┤
+│ 1. TWFE DiD (ACS, under 65)            │ treated_post               │ −1.280 │ 0.741 │ 0.084  │ 468 │
+├────────────────────────────────────────┼────────────────────────────┼────────┼───────┼────────┼─────┤
+│ 2. Convergence (2013–2019 change)      │ baseline_rate_2013:treated │ −0.225 │ 0.142 │ 0.113  │ 39  │
+├────────────────────────────────────────┼────────────────────────────┼────────┼───────┼────────┼─────┤
+│ 3. Welch t-test (2013–2016 change)     │ treated − control mean     │ −1.409 │ 0.754 │ 0.071  │ 39  │
+├────────────────────────────────────────┼────────────────────────────┼────────┼───────┼────────┼─────┤
+│ 4a. TWFE DiD (SAHIE, ≤138% FPL, 18–64) │ treated_post               │ −4.814 │ 1.411 │ 0.0006 │ 468 │
+├────────────────────────────────────────┼────────────────────────────┼────────┼───────┼────────┼─────┤
+│ 4b. TWFE DiD (all 51, staggered)       │ treated_post               │ −1.551 │ 0.462 │ 0.0008 │ 612 │
+└────────────────────────────────────────┴────────────────────────────┴────────┴───────┴────────┴─────┘
+
+All the estimates point the way you expected. But the main DiD (p = 0.084) and the convergence interaction (p = 0.113) miss the p < 0.05 bar in Plan §5. Only the two robustness checks are significant.
+
+Charts: each has a title, axis labels with units and a source note.
+- Chart 1 (trends): the line breaks at 2020, and the pre-2014 trends look roughly parallel. Control states fell slightly more over 2010–2013 (about −1.1 vs −0.8 percentage points).
+- Chart 2 (dispersion): spread across treated states drops below control from 2014 on.
+- Chart 3 (catch-up scatter): the fitted slope is −0.51 for treated states and −0.29 for control.
+
+Choices to confirm:
+- SAHIE years in Test 4a: SAHIE includes 2020, but onky kept the same 12 years as Test 1. That way only the outcome changes between the two. 
+- Chart 2 groups: it shows only treated and control, not the late expanders, to match the DiD comparison.
+- Test 3: to fill the table, used difference in mean changes as the coefficient and the Welch standard error, sqrt(var_t/n_t + var_c/n_c), as the SE.
+- Test 4b caveat: the Markdown notes that two-way fixed effects with staggered timing can be biased. It's presented only as a robustness check.
